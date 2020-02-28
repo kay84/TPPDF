@@ -13,29 +13,33 @@ public struct PDFPagination: PDFJSONSerializable {
     /**
      Container where the pagination will be placed
      */
-    public var container: PDFContainer
+    public var container: PDFContainer = .none
 
     /**
      Style of the pagination
      */
-    public var style: PDFPaginationStyle
+    public var style: PDFPaginationStyle = .default
 
     /**
      Range of pages which will be paginated
      */
-    public var range: (start: Int, end: Int)
+    public var range: (start: Int, end: Int) = (0, Int.max)
 
     /**
      Add a page number to this list to exclude it from the pagination.
      This will not skip the page but instead not render the pagination object
      */
-    public var hiddenPages: [Int]
+    public var hiddenPages: [Int] = []
 
     /**
      These text attribtues are used to create the attributed pagination string
      */
-    public var textAttributes: [NSAttributedString.Key: Any]
+    public var textAttributes: [NSAttributedString.Key: Any] = [:]
 
+    public init() {
+        self.init(container: .none, style: .default, range: (0, Int.max), hiddenPages: [], textAttributes: [:])
+    }
+    
     /**
      Initializer
 
@@ -55,4 +59,5 @@ public struct PDFPagination: PDFJSONSerializable {
         self.hiddenPages = hiddenPages
         self.textAttributes = textAttributes
     }
+    
 }
