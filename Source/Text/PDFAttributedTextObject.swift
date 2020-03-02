@@ -203,7 +203,7 @@ internal class PDFAttributedTextObject: PDFObject {
                                                        fonts: inout [PDFContainer: UIFont],
                                                        textColor: inout [PDFContainer: UIColor],
                                                        spacing: CGFloat,
-                                                       style: PDFTextStyle?) -> [NSAttributedString.Key: NSObject] {
+                                                       style: PDFTextStyle?) -> [String: NSObject] {
         let paragraphStyle = NSMutableParagraphStyle()
         if container.isLeft {
             paragraphStyle.alignment = .left
@@ -213,11 +213,11 @@ internal class PDFAttributedTextObject: PDFObject {
             paragraphStyle.alignment = .center
         }
         paragraphStyle.lineSpacing = spacing
-
+        
         return [
-            NSAttributedString.Key.font: style?.font ?? fonts[container]!,
-            NSAttributedString.Key.foregroundColor: style?.color ?? textColor[container]!,
-            NSAttributedString.Key.paragraphStyle: paragraphStyle
+            NSFontAttributeName: style?.font ?? fonts[container]!,
+            NSForegroundColorAttributeName: style?.color ?? textColor[container]!,
+            NSParagraphStyleAttributeName: paragraphStyle
         ]
     }
 

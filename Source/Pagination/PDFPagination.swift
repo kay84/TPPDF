@@ -34,7 +34,7 @@ public struct PDFPagination: PDFJSONSerializable {
     /**
      These text attribtues are used to create the attributed pagination string
      */
-    public var textAttributes: [NSAttributedString.Key: Any]
+    public var textAttributes: [String: Any]
 
     /**
      Initializer
@@ -48,7 +48,7 @@ public struct PDFPagination: PDFJSONSerializable {
                 style: PDFPaginationStyle = .default,
                 range: (start: Int, end: Int) = (0, Int.max),
                 hiddenPages: [Int] = [],
-                textAttributes: [NSAttributedString.Key: Any] = [:]) {
+                textAttributes: [String: Any] = [:]) {
         self.container = container
         self.style = style
         self.range = range

@@ -230,7 +230,7 @@ internal enum PDFGraphics {
      - returns: Compressed image
      */
     internal static func compress(image: UIImage, quality: CGFloat) -> UIImage {
-        guard let data = image.jpegData(compressionQuality: quality) else {
+        guard let data = UIImageJPEGRepresentation(image, quality) else {
             return image
         }
         guard let compressed = UIImage(data: data) else {

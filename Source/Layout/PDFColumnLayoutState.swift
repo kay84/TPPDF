@@ -16,32 +16,32 @@ internal class PDFColumnLayoutState: CustomStringConvertible {
     /**
      TODO: Documentation
      */
-    private var maxColumns: [PDFContainer: Int]
+    fileprivate var maxColumns: [PDFContainer: Int]
 
     /**
      TODO: Documentation
      */
-    private var currentColumn: [PDFContainer: Int]
+    fileprivate var currentColumn: [PDFContainer: Int]
 
     /**
      TODO: Documentation
      */
-    private var columnWidths: [PDFContainer: [CGFloat]]
+    fileprivate var columnWidths: [PDFContainer: [CGFloat]]
 
     /**
      TODO: Documentation
      */
-    private var columnSpacings: [PDFContainer: [CGFloat]]
+    fileprivate var columnSpacings: [PDFContainer: [CGFloat]]
 
     /**
      TODO: Documentation
      */
-    private var wrapColumnsHeight: [PDFContainer: CGFloat]
+    fileprivate var wrapColumnsHeight: [PDFContainer: CGFloat]
 
     /**
      TODO: Documentation
      */
-    private var inset: [PDFContainer: (left: CGFloat, right: CGFloat)]
+    fileprivate var inset: [PDFContainer: (left: CGFloat, right: CGFloat)]
 
     /**
      TODO: Documentation

@@ -302,10 +302,10 @@ internal class PDFTableObject: PDFObject {
             }
         }()
 
-        let attributes: [NSAttributedString.Key: AnyObject] = [
-            NSAttributedString.Key.foregroundColor: cellStyle.colors.text,
-            NSAttributedString.Key.font: cellStyle.font,
-            NSAttributedString.Key.paragraphStyle: paragraph
+        let attributes: [String: AnyObject] = [
+            NSForegroundColorAttributeName: cellStyle.colors.text,
+            NSFontAttributeName: cellStyle.font,
+            NSParagraphStyleAttributeName: paragraph
         ]
         return NSAttributedString(string: text, attributes: attributes)
     }

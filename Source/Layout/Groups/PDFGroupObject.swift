@@ -167,7 +167,7 @@ internal class PDFGroupObject: PDFObject {
     }
 
     private func calculateBoundsFrame(generator: PDFGenerator) -> CGRect {
-        return generator.document.layout.bounds.inset(by: generator.layout.margin)
+        return UIEdgeInsetsInsetRect(generator.document.layout.bounds, generator.layout.margin)
     }
 
     /**
@@ -210,7 +210,7 @@ internal class PDFGroupObject: PDFObject {
 
         if generator.debug {
             PDFGraphics.drawRect(rect: self.frame, outline: PDFLineStyle(type: .dashed, color: .red, width: 1.0), fill: .clear)
-            PDFGraphics.drawRect(rect: self.frame.inset(by: padding), outline: PDFLineStyle(type: .full, color: .purple, width: 1.0), fill: .clear)
+            PDFGraphics.drawRect(rect: UIEdgeInsetsInsetRect(self.frame, padding), outline: PDFLineStyle(type: .full, color: .purple, width: 1.0), fill: .clear)
         }
     }
 
